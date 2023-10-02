@@ -1,0 +1,31 @@
+<aside class="flx col jcb aic">
+  <div class="section">
+    <div class="sb-logo"></div>
+
+    <ul>
+      <li *ngFor="let item of topItems">
+        <a class="flx aic" title="{{content.modules[item.tag].title}}" routerLink="{{item.route}}">
+          <span class="material-symbols-outlined">{{item.icon}}</span>
+          <span class="sbli-name">{{content.modules[item.tag].title}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section flex col">
+    <ul>
+      <li *ngFor="let item of bottomItems">
+        <a class="flx aic" title="{{content.modules[item.tag].title}}" routerLink="{{item.route}}">
+          <span class="material-symbols-outlined">{{item.icon}}</span>
+          <span class="sbli-name">{{content.modules[item.tag].title}}</span>
+        </a>
+      </li>
+      <li>
+        <a class="flx aic" title="{{content.auth.signOut}}" (click)="signOut()">
+          <span class="material-symbols-outlined">logout</span>
+          <span class="sbli-name">{{content.auth.signOut}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</aside>

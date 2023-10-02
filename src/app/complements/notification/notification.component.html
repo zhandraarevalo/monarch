@@ -1,0 +1,19 @@
+<div id="notification" class="modal page flx jcc aic" style="display: none;">
+  <div class="modal-container flx col">
+    <div class="modal-header {{trunc(notification.httpCode / 100) === 5 ? 'berror': trunc(notification.httpCode / 100) === 4 ? 'bwarn' : 'bone'}} flx jcb aic">
+      <span>{{notification.title}}</span>
+      <a class="flx aic" (click)="close()">
+        <span class="material-symbols-outlined">close</span>
+      </a>
+    </div>
+
+    <div class="modal-body flx jcc tac">{{notification.internalCode}}: {{notification.message}}</div>
+
+    <div class="modal-footer flx jcd aic" *ngIf="notification.options && notification.options.length > 0">
+      <button 
+        class="btn btn-sml btn-{{trunc(notification.httpCode / 100) === 5 ? 'berror': trunc(notification.httpCode / 100) === 4 ? 'bwarn' : 'bone'}}"
+        (click)="call(option.fn, option.route)"
+        *ngFor="let option of notification.options">{{option.value}}</button>
+    </div>
+  </div>
+</div>

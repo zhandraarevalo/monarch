@@ -1,0 +1,35 @@
+.bone {
+  background-color: $color-one;
+  color: $white;
+}
+
+.btwo {
+  background-color: $color-two;
+  color: $white;
+}
+
+.bthr {
+  background-color: $color-thr;
+  color: $white;
+}
+
+.bgoo {
+  background-color: $color-goo;
+  color: $white;
+}
+
+.cone {
+  color: $color-one-light;
+  background-color: transparent;
+  border: 1px solid $color-one-light;
+}
+
+.berror {
+  background-color: $error;
+  color: $white;
+}
+
+.bwarn {
+  background-color: $warning;
+  color: $white;
+}

@@ -1,0 +1,107 @@
+.table-container {
+  width: 100%;
+  border: 1px solid $color-one;
+  border-radius: 3px;
+  overflow-x: scroll;
+  box-shadow: 1px 1px 5px $color-one;
+}
+
+table {
+  width: 100%;
+  font-size: 12px;
+  white-space: nowrap;
+
+  th {
+    text-align: left;
+  }
+
+  thead th,
+  tfoot td {
+    padding: 10px;
+    background-color: $color-one;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $white;
+  }
+
+  tbody tr {
+    &:hover {
+      background-color: $color-one-dark;
+    }
+
+    &:not(:last-child) {
+      th, td {
+        border-bottom: 1px solid $color-one;
+      }
+    }
+
+    th {
+      font-weight: 600;
+    }
+
+    td {
+      .material-symbols-outlined {
+        font-size: 14px;
+      }
+    }
+
+    th, td {
+      height: 40px;
+      padding: 5px 10px;
+      text-align: left;
+      font-family: $font-mono;
+    }
+  }
+
+  tfoot td {
+    font-family: $font-mono;
+  }
+
+  &.detail tr {
+    height: 20px;
+
+    th {
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    td {
+      font-family: $font-mono;
+    }
+
+    th,
+    td {
+      padding: 0 5px;
+    }
+  }
+  
+  &.form {
+    th {
+      display: none;
+    }
+  }
+  
+}
+
+@media screen and (min-width: 1250px) {
+  .table-container {
+    overflow-x: hidden;
+  }
+
+  table {
+    &.form {
+      width: 100%;
+
+      th {
+        display: table-cell;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      th,
+      td {
+        padding: 0 5px;
+      }
+    }
+  }
+}

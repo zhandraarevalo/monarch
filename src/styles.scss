@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/color-schemas';
+@import 'src/assets/styles/flex';
+@import 'src/assets/styles/button';
+@import 'src/assets/styles/form';
+@import 'src/assets/styles/utils';
+@import 'src/assets/styles/table';
+@import 'src/assets/styles/modal';
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  overflow-x: hidden;
+  color-scheme: dark;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $black;
+  color: $white;
+  font-family: $font-sans;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+a,
+button,
+input[type=submit] {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid $color-one;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px $color-one;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-family: $font-serf;
+  font-weight: 600;
+
+  .material-symbols-outlined {
+    margin-right: 5px;
+  }
+}
+
+h4 {
+  margin: 15px 0 10px 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.material-symbols-outlined {
+  font-size: inherit;
+  line-height: normal;
+  color: inherit;
+}

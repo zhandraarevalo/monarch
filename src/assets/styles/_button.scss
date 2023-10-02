@@ -1,0 +1,131 @@
+button,
+input[type=button],
+input[type=submit] {
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: $transition;
+
+  &:hover {
+    transition: $transition;
+  }
+
+  &-box,
+  &-isl,
+  &-inp,
+  &-sml,
+  &-lrg {
+    border-radius: 3px;
+  }
+
+  &-isl {
+    padding: 7px 15px;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  &-sml {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  &-lrg {
+    width: 300px;
+    height: 40px;
+
+    .material-symbols-outlined {
+      margin-right: 7px;
+    }
+  }
+
+  &-box {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+
+    &:not(:last-of-type) {
+      margin-right: 5px;
+    }
+  }
+
+  &-bone {
+    @extend .bone;
+
+    &:hover {
+      background-color: $color-one-light;
+    }
+
+    &:disabled {
+      background-color: $color-one;
+      color: darken($white, 20%);
+    }
+  }
+
+  &-btwo {
+    @extend .btwo;
+
+    &:hover {
+      background-color: $color-two-light;
+    }
+
+    &:disabled {
+      background-color: $color-two;
+      color: darken($white, 20%);
+    }
+  }
+
+  &-bthr {
+    @extend .bthr;
+
+    &:hover {
+      background-color: $color-thr-light;
+    }
+
+    &:disabled {
+      background-color: $color-thr;
+      color: darken($white, 20%);
+    }
+  }
+
+  &-bgoo {
+    @extend .bgoo;
+
+    &:hover,
+    &:disabled {
+      background-color: darken($color-goo, 15%);
+    }
+  }
+
+  &-cone {
+    @extend .cone;
+
+    &:hover {
+      color: $color-one;
+      border-color: $color-one;
+    }
+  }
+
+  &-berror {
+    @extend .berror;
+
+    &:hover {
+      background-color: darken($error, 10%);
+    }
+  }
+
+  &-bwarn {
+    @extend .bwarn;
+
+    &:hover {
+      background-color: darken($warning, 10%);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
