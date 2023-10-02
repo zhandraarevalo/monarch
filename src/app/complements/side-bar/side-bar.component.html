@@ -12,18 +12,18 @@
     </ul>
   </div>
 
-  <div class="section flex col">
-    <ul>
-      <li *ngFor="let item of bottomItems">
-        <a class="flx aic" title="{{content.modules[item.tag].title}}" routerLink="{{item.route}}">
-          <span class="material-symbols-outlined">{{item.icon}}</span>
-          <span class="sbli-name">{{content.modules[item.tag].title}}</span>
-        </a>
-      </li>
+  <div class="section">
+    <ul class="flx col-rev">
       <li>
         <a class="flx aic" title="{{content.auth.signOut}}" (click)="signOut()">
           <span class="material-symbols-outlined">logout</span>
           <span class="sbli-name">{{content.auth.signOut}}</span>
+        </a>
+      </li>
+      <li *ngFor="let item of bottomItems">
+        <a class="flx aic" title="{{content.modules[item.tag].title}}" routerLink="{{item.route}}">
+          <span class="material-symbols-outlined">{{item.icon}}</span>
+          <span class="sbli-name">{{content.modules[item.tag].title}}</span>
         </a>
       </li>
     </ul>

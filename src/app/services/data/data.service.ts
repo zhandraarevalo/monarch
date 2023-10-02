@@ -50,6 +50,9 @@ export class DataService {
         dashboard: {
           title: 'Monitor',
         },
+        profile: {
+          title: 'Perfil',
+        },
       },
       notificationStatus: {
         error: 'Error',

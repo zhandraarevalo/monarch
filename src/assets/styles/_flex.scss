@@ -7,6 +7,9 @@
   &.col {
     flex-direction: column;
   }
+  &.col-rev {
+    flex-direction: column-reverse;
+  }
 
   &.jca {
     justify-content: space-around;
