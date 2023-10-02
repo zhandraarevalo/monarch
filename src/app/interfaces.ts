@@ -1,3 +1,8 @@
+export interface INavigation {
+  name: string;
+  url: string;
+}
+
 export interface INotification {
   httpCode: number;
   internalCode: number;

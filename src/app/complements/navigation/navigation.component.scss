@@ -1,0 +1,21 @@
+@import '../../../assets/styles/variables';
+
+#navigation {
+  height: 35px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+a {
+  font-weight: 400;
+  color: $color-one-light;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.material-symbols-outlined {
+  margin: 0 5px;
+}
