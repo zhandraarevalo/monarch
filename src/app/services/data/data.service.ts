@@ -50,8 +50,17 @@ export class DataService {
         dashboard: {
           title: 'Monitor',
         },
+        finances: {
+          title: 'Finanzas',
+        },
+        locker: {
+          title: 'Contraseñas',
+        },
         profile: {
           title: 'Perfil',
+        },
+        resume: {
+          title: 'Currículum',
         },
       },
       notificationStatus: {

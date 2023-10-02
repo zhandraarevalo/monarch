@@ -1,0 +1,14 @@
+@import '../../../assets/styles/variables';
+
+main {
+  min-height: 100vh;
+  margin-left: $sbw-sml;
+  padding: 10px;
+}
+
+@media screen and (min-width: 1250px) {
+  main {
+    margin-left: $sbw-lrg;
+    padding: 20px;
+  }
+}

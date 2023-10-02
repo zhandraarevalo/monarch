@@ -7,18 +7,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { NotificationComponent } from './complements/notification/notification.component';
+import { SideBarComponent } from './complements/side-bar/side-bar.component';
 
 import { SignInComponent } from './views/sign-in/sign-in.component';
 import { AuthComponent } from './views/auth/auth.component';
-import { SideBarComponent } from './complements/side-bar/side-bar.component';
+  import { FinancesComponent } from './views/auth/finances/finances.component';
+import { NavigationComponent } from './complements/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotificationComponent,
+    SideBarComponent,
     SignInComponent,
     AuthComponent,
-    SideBarComponent,
+      FinancesComponent,
+      NavigationComponent,
   ],
   imports: [
     AppRoutingModule,
