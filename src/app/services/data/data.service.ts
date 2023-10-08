@@ -27,6 +27,10 @@ export class DataService {
           operation: 'Operación',
           saving: 'Ahorro',
         },
+        countryIso: {
+          MX: 'México',
+          US: 'Estados Unidos',
+        },
         paymentType: {
           entry: 'Ingreso',
           exit: 'Egreso',
@@ -52,6 +56,20 @@ export class DataService {
         },
         finances: {
           title: 'Finanzas',
+          settings: 'Configuraciones de finanzas',
+          currencySettings: 'Configuración de monedas',
+          accountSettings: 'Configuración de cuentas',
+          accountCreate: 'Crear cuenta',
+          accountUpdate: 'Editar cuenta',
+          walletSettings: 'Configuración de billeteras',
+          walletCreate: 'Crear billetera',
+          walletUpdate: 'Editar billetera',
+          groupSettings: 'Configuración de grupos',
+          groupCreate: 'Crear grupo',
+          groupUpdate: 'Editar grupo',
+          categorySettings: 'Configuración de categorías',
+          categoryCreate: 'Crear categoría',
+          categoryUpdate: 'Editar categoría',
         },
         locker: {
           title: 'Contraseñas',
@@ -66,6 +84,29 @@ export class DataService {
       notificationStatus: {
         error: 'Error',
       },
+      select: {
+        account: 'Seleccione una cuenta',
+        currency: 'Seleccione una moneda',
+        group: 'Seleccione un grupo',
+        categoryType: 'Seleccione el tipo de categoría',
+        walletType: 'Seleccione el tipo de billetera',
+      },
+      tag: {
+        account: 'Cuenta',
+        accumulates: 'Acumula',
+        active: 'Activo',
+        budget: 'Presupuesto',
+        country: 'País',
+        currency: 'Moneda',
+        group: 'Grupo',
+        initialBalance: 'Saldo inicial',
+        iso: 'Código ISO',
+        main: 'Principal',
+        name: 'Nombre',
+        noRows: 'No hay registros para mostrar',
+        requiredFields: 'Campos requeridos',
+        type: 'Tipo',
+      }
     }
   }
 

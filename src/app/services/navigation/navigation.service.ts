@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { INavigation } from 'src/app/interfaces';
 
 @Injectable({
@@ -6,46 +7,54 @@ import { INavigation } from 'src/app/interfaces';
 })
 export class NavigationService {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
-  set(navs: INavigation[]) {
-    sessionStorage.setItem('nav', JSON.stringify(navs));
+  set(locations: INavigation[]) {
+    sessionStorage.setItem('nav', JSON.stringify(locations));
   }
 
   get get(): INavigation[] {
-    const navs = sessionStorage.getItem('nav');
-    return navs ? JSON.parse(navs) : null;
+    const locations = sessionStorage.getItem('nav');
+    return locations ? JSON.parse(locations) : null;
   }
 
-  addNav(nav: INavigation) {
-    const navs = this.get;
-    const found = navs.find((v: INavigation) => v.url === nav.url);
+  addLocation(location: INavigation) {
+    const locations = this.get;
+
+    let index = null;
+    const found = locations.find((v: INavigation, i: number) => {
+      if (v.url === location.url) {
+        index = i + 1;
+        return true;
+      }
+      return false;
+    });
 
     if (!found) {
-      navs.push(nav);
-      this.set(navs);
+      locations.push(location);
+      this.set(locations);
+    } else if (index && index < locations.length) {
+      this.set(locations.slice(0, index));
     }
   }
 
-  goTo(nav: INavigation) {
-    const navs = this.get;
+  returnOne(route: string) {
+    const locations = this.get;
 
-    if (navs) {
-      let index = 0;
-      const found = navs.find((v: INavigation, i: number) => {
-        if (v.url === nav.url) {
-          index = i;
-          return true;
-        }
-        return false;
-      });
-
-      if (found) {
-        const remove = navs.length - (index + 1);
-        navs.splice(index, remove);
-        this.set(navs);
+    let index = null;
+    const found = locations.find((v: INavigation, i: number) => {
+      if (v.url === route) {
+        index = i - 1;
+        return true;
       }
-    } 
+      return false;
+    });
+
+    if (found && index) {
+      this.router.navigate([locations[index].url]);
+    }
   }
 
 }

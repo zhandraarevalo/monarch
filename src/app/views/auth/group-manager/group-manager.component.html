@@ -1,0 +1,20 @@
+<div class="header flx jcb aic">
+  <h3 class="flx aic">
+    <span class="material-symbols-outlined">receipt_long</span>
+    <span>{{title}}</span>
+  </h3>
+</div>
+
+<app-navigation></app-navigation>
+
+<div class="flx col aic">
+  <form [formGroup]="groupForm" (submit)="execute()">
+    <fieldset class="form-v">
+      <label for="finances_settings-group_name">{{content.tag.name}} <span class="required">*</span></label>
+      <input type="text" id="finances_settings-group_name" placeholder="{{content.tag.name}}" formControlName="name">
+
+      <p class="form-message"><span class="required">*</span> {{content.tag.requiredFields}}</p>
+      <input type="submit" class="btn btn-inp btn-bone" [value]="content.button.accept" [disabled]="!groupForm.valid">
+    </fieldset>
+  </form>
+</div>

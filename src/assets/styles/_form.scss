@@ -92,6 +92,12 @@ form {
         background-color: $black;
         color: $white;
 
+        &:disabled {
+          cursor: not-allowed;
+          background-color: lighten($black, 5%);
+          color: darken($white, 10%);
+        }
+
         &:focus-visible {
           outline: none;
         }

@@ -1,0 +1,40 @@
+<div class="header flx jcb aic">
+  <h3 class="flx aic">
+    <span class="material-symbols-outlined">request_quote</span>
+    <span>{{title}}</span>
+  </h3>
+</div>
+
+<app-navigation></app-navigation>
+
+<div class="flx col aic">
+  <form [formGroup]="categoryForm" (submit)="execute()">
+    <fieldset class="form-v">
+      <label for="finances_settings-category_group">{{content.tag.group}} <span class="required">*</span></label>
+      <select id="finances_settings-category_group" formControlName="group">
+        <option [value]="null">{{content.select.group}}</option>
+        <option [value]="item.id" *ngFor="let item of groupList">{{item.name}}</option>
+      </select>
+
+      <label for="finances_settings-category_type">{{content.tag.type}} <span class="required">*</span></label>
+      <select id="finances_settings-category_type" formControlName="type">
+        <option [value]="null">{{content.select.categoryType}}</option>
+        <option [value]="item.tag" *ngFor="let item of typeList">{{content.catalogue.categoryType[item.tag]}}</option>
+      </select>
+
+      <label for="finances_settings-category_name">{{content.tag.name}} <span class="required">*</span></label>
+      <input type="text" id="finances_settings-category_name" placeholder="{{content.tag.name}}" formControlName="name">
+
+      <label for="finances_settings-category_budget">{{content.tag.budget}} <span class="required">*</span></label>
+      <input type="number" min="0" id="finances_settings-category_budget" placeholder="{{content.tag.budget}}" formControlName="budget">
+
+      <div class="radio-row flx aic">
+        <input type="checkbox" id="finances_settings-category_accumulates" formControlName="accumulates">
+        <label for="profile-category-accumulates">{{content.tag.accumulates}}</label>
+      </div>
+
+      <p class="form-message"><span class="required">*</span> {{content.tag.requiredFields}}</p>
+      <input type="submit" class="btn btn-inp btn-bone" [value]="content.button.accept" [disabled]="!categoryForm.valid">
+    </fieldset>
+  </form>
+</div>

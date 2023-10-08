@@ -1,0 +1,180 @@
+<div class="header flx jcb aic">
+  <h3 class="flx aic">
+    <span class="material-symbols-outlined">settings</span>
+    <span>{{content.modules[activeModule.tag].settings}}</span>
+  </h3>
+</div>
+
+<app-navigation></app-navigation>
+
+<div class="flx jcb aic">
+  <h4>{{content.modules.finances.currencySettings}}</h4>
+</div>
+
+<div class="table-container flx">
+  <table [cellSpacing]="0">
+    <thead>
+      <th>{{content.tag.iso}}</th>
+      <th>{{content.tag.country}}</th>
+      <th>{{content.tag.active}}</th>
+      <th>{{content.tag.main}}</th>
+      <th class="col-10"></th>
+    </thead>
+    <tbody *ngIf="currencyList.length > 0">
+      <tr *ngFor="let item of currencyList">
+        <td>{{item.currency.iso}}</td>
+        <td>{{content.catalogue.countryIso[item.currency.countryIso]}}</td>
+        <td class="tac"><span class="material-symbols-outlined">{{item.active ? 'check' : 'close'}}</span></td>
+        <td class="tac"><span class="material-symbols-outlined">{{item.main ? 'check' : 'close'}}</span></td>
+        <td class="flx jcc aic">
+          <button class="btn btn-box btn-bone flx jcc aic" routerLink="currency/{{item.id}}">
+            <span class="material-symbols-outlined">edit_square</span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="currencyList.length === 0">
+      <tr>
+        <td class="tac" colspan="5">{{content.tag.noRows}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="flx jcb aic">
+  <h4>{{content.modules.finances.accountSettings}}</h4>
+  <button class="btn btn-box btn-bone flx jcc aic" routerLink="account">
+    <span class="material-symbols-outlined">add</span>
+  </button>
+</div>
+
+<div class="table-container flx">
+  <table [cellSpacing]="0">
+    <thead>
+      <th>{{content.tag.name}}</th>
+      <th>{{content.tag.currency}}</th>
+      <th class="col-10"></th>
+    </thead>
+    <tbody *ngIf="accountList.length > 0">
+      <tr *ngFor="let item of accountList">
+        <td>{{item.name}}</td>
+        <td>{{item.currency.iso}}</td>
+        <td class="flx jcc aic">
+          <button class="btn btn-box btn-bone flx jcc aic" routerLink="account/{{item.id}}">
+            <span class="material-symbols-outlined">edit_square</span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="accountList.length === 0">
+      <tr>
+        <td class="tac" colspan="3">{{content.tag.noRows}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="flx jcb aic">
+  <h4>{{content.modules.finances.walletSettings}}</h4>
+  <button class="btn btn-box btn-bone flx jcc aic" routerLink="wallet">
+    <span class="material-symbols-outlined">add</span>
+  </button>
+</div>
+
+<div class="table-container flx">
+  <table [cellSpacing]="0">
+    <thead>
+      <th>{{content.tag.account}}</th>
+      <th>{{content.tag.name}}</th>
+      <th>{{content.tag.type}}</th>
+      <th class="col-10"></th>
+    </thead>
+    <tbody *ngIf="walletList.length > 0">
+      <tr *ngFor="let item of walletList">
+        <td>{{item.account.name}}</td>
+        <td>{{item.name}}</td>
+        <td>{{content.catalogue.walletType[item.type]}}</td>
+        <td class="flx jcc aic">
+          <button class="btn btn-box btn-bone flx jcc aic" routerLink="wallet/{{item.id}}">
+            <span class="material-symbols-outlined">edit_square</span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="walletList.length === 0">
+      <tr>
+        <td class="tac" colspan="4">{{content.tag.noRows}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="flx jcb aic">
+  <h4>{{content.modules.finances.groupSettings}}</h4>
+  <button class="btn btn-box btn-bone flx jcc aic" routerLink="group">
+    <span class="material-symbols-outlined">add</span>
+  </button>
+</div>
+
+<div class="table-container flx">
+  <table [cellSpacing]="0">
+    <thead>
+      <th>{{content.tag.name}}</th>
+      <th class="col-10"></th>
+    </thead>
+    <tbody *ngIf="groupList.length > 0">
+      <tr *ngFor="let item of groupList">
+        <td>{{item.name}}</td>
+        <td class="flx jcc aic">
+          <button class="btn btn-box btn-bone flx jcc aic" routerLink="group/{{item.id}}">
+            <span class="material-symbols-outlined">edit_square</span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="groupList.length === 0">
+      <tr>
+        <td class="tac" colspan="2">{{content.tag.noRows}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="flx jcb aic">
+  <h4>{{content.modules.finances.categorySettings}}</h4>
+  <button class="btn btn-box btn-bone flx jcc aic" routerLink="category">
+    <span class="material-symbols-outlined">add</span>
+  </button>
+</div>
+
+<div class="table-container flx">
+  <table [cellSpacing]="0">
+    <thead>
+      <th>{{content.tag.group}}</th>
+      <th>{{content.tag.name}}</th>
+      <th>{{content.tag.type}}</th>
+      <th>{{content.tag.accumulates}}</th>
+      <th>{{content.tag.budget}}</th>
+      <th class="col-10"></th>
+    </thead>
+    <tbody *ngIf="categoryList.length > 0">
+      <tr *ngFor="let item of categoryList">
+        <td>{{item.group.name}}</td>
+        <td>{{item.name}}</td>
+        <td>{{content.catalogue.categoryType[item.type]}}</td>
+        <td class="tac"><span class="material-symbols-outlined">{{item.accumulates ? 'check' : 'close'}}</span></td>
+        <td class="tar">{{item.budget.amount / 100 | number: '1.2-2'}}</td>
+        <td class="flx jcc aic">
+          <button class="btn btn-box btn-bone flx jcc aic" routerLink="category/{{item.id}}">
+            <span class="material-symbols-outlined">edit_square</span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="categoryList.length === 0">
+      <tr>
+        <td class="tac" colspan="6">{{content.tag.noRows}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

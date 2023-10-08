@@ -1,0 +1,26 @@
+<div class="header flx jcb aic">
+  <h3 class="flx aic">
+    <span class="material-symbols-outlined">account_balance</span>
+    <span>{{title}}</span>
+  </h3>
+</div>
+
+<app-navigation></app-navigation>
+
+<div class="flx col aic">
+  <form [formGroup]="accountForm" (submit)="execute()">
+    <fieldset class="form-v">
+      <label for="finances_settings-account_name">{{content.tag.name}} <span class="required">*</span></label>
+      <input type="text" id="finances_settings-account_name" placeholder="{{content.tag.name}}" formControlName="name">
+
+      <label for="finances_settings-account_currency">{{content.tag.currency}} <span class="required">*</span></label>
+      <select id="finances_settings-account_currency" formControlName="currency">
+        <option [value]="null">{{content.select.currency}}</option>
+        <option [value]="item.id" *ngFor="let item of currencyList">{{item.currency.iso}}</option>
+      </select>
+
+      <p class="form-message"><span class="required">*</span> {{content.tag.requiredFields}}</p>
+      <input type="submit" class="btn btn-inp btn-bone" [value]="content.button.accept" [disabled]="!accountForm.valid">
+    </fieldset>
+  </form>
+</div>

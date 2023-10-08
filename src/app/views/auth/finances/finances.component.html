@@ -1,8 +1,106 @@
-<div class="header flx aic">
+<div class="header flx jcb aic">
   <h3 class="flx aic">
     <span class="material-symbols-outlined">{{activeModule.icon}}</span>
-    <span>{{content.modules[activeModule.tag].title}}</span>
+    <span>{{content.modules.finances.title}}</span>
   </h3>
+
+  <div class="flx aic">
+    <button class="btn btn-box btn-bthr flx jcc aic" title="">
+      <span class="material-symbols-outlined">receipt_long</span>
+    </button>
+    <button class="btn btn-box btn-bone flx jcc aic" title="" routerLink="settings">
+      <span class="material-symbols-outlined">settings</span>
+    </button>
+    <button class="btn btn-box btn-bthr flx jcc aic" title="">
+      <span class="material-symbols-outlined">backup</span>
+    </button>
+    <button class="btn btn-box btn-bone flx jcc aic" title="">
+      <span class="material-symbols-outlined">filter_alt</span>
+    </button>
+  </div>
 </div>
 
 <app-navigation></app-navigation>
+
+<div class="flx jcc wrp">
+  <button class="btn btn-lrg btn-bone">Cambio</button>
+  <button class="btn btn-lrg btn-bthr">Pago</button>
+  <button class="btn btn-lrg btn-bone">Transferencia</button>
+</div>
+
+<div class="flx jca wrp">
+  <div class="monitor-box flx col">
+    <span class="monitor-title">TITLE</span>
+    <span class="monitor-value mono tar">
+      {{ 0 | number: '1.2-2' }} MXN
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">TITLE</span>
+    <span class="monitor-value mono tar">
+      {{ 0 | number: '1.2-2' }} MXN
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">TITLE</span>
+    <span class="monitor-value mono tar">
+      {{ 0 | number: '1.2-2' }} MXN
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">TITLE</span>
+    <span class="monitor-value mono tar">
+      {{ 0 | number: '1.2-2' }} MXN
+    </span>
+  </div>
+  <!-- <div class="monitor-box flx col">
+    <span class="monitor-title">{{data.modules.dashboard.currentIncome}}</span>
+    <span class="monitor-value mono tar">
+      {{ (budgets?.incomeBudget ? budgets.incomeBudget / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{data.modules.dashboard.savingsBudget}}</span>
+    <span class="monitor-value mono tar">
+      {{ (budgets?.savingBudget ? budgets.savingBudget / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{data.modules.dashboard.expensesBudget}}</span>
+    <span class="monitor-value mono tar">
+      {{ (budgets?.expenseBudget ? budgets.expenseBudget / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{data.modules.dashboard.reserveBudget}}</span>
+    <span class="monitor-value mono tar">
+      {{ (budgets?.reserveBudget ? budgets.reserveBudget / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{data.modules.dashboard.totalIncome}}</span>
+    <span class="monitor-value mono tar">
+      {{ (budgets?.incomeTotal ? budgets.incomeTotal / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{data.modules.dashboard.totalSavings}}</span>
+    <span class="monitor-value mono tar">
+      {{ (budgets?.savingTotal ? budgets.savingTotal / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{data.modules.dashboard.totalExpenses}}</span>
+    <span class="monitor-value mono tar">
+      {{ (budgets?.expenseTotal ? budgets.expenseTotal / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{data.modules.dashboard.totalReserved}}</span>
+    <span class="monitor-value mono tar">
+      {{ (budgets?.reserveTotal ? budgets.reserveTotal / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
+    </span>
+  </div> -->
+</div>
+
+<!-- <app-notification [notification]="notification"></app-notification> -->

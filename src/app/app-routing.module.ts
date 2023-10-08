@@ -8,6 +8,11 @@ import { PermissionGuard } from './guards/permission/permission.guard';
 import { SignInComponent } from './views/sign-in/sign-in.component';
 import { AuthComponent } from './views/auth/auth.component';
   import { FinancesComponent } from './views/auth/finances/finances.component';
+  import { FinancesSettingsComponent } from './views/auth/finances-settings/finances-settings.component';
+  import { AccountManagerComponent } from './views/auth/account-manager/account-manager.component';
+  import { WalletManagerComponent } from './views/auth/wallet-manager/wallet-manager.component';
+  import { GroupManagerComponent } from './views/auth/group-manager/group-manager.component';
+  import { CategoryManagerComponent } from './views/auth/category-manager/category-manager.component';
 
 const routes: Routes = [
   {
@@ -23,6 +28,51 @@ const routes: Routes = [
       {
         path:'finances',
         component: FinancesComponent,
+        canActivate: [PermissionGuard],
+      },
+      {
+        path:'finances/settings',
+        component: FinancesSettingsComponent,
+        canActivate: [PermissionGuard],
+      },
+      {
+        path:'finances/settings/account',
+        component: AccountManagerComponent,
+        canActivate: [PermissionGuard],
+      },
+      {
+        path:'finances/settings/account/:id',
+        component: AccountManagerComponent,
+        canActivate: [PermissionGuard],
+      },
+      {
+        path:'finances/settings/wallet',
+        component: WalletManagerComponent,
+        canActivate: [PermissionGuard],
+      },
+      {
+        path:'finances/settings/wallet/:id',
+        component: WalletManagerComponent,
+        canActivate: [PermissionGuard],
+      },
+      {
+        path:'finances/settings/group',
+        component: GroupManagerComponent,
+        canActivate: [PermissionGuard],
+      },
+      {
+        path:'finances/settings/group/:id',
+        component: GroupManagerComponent,
+        canActivate: [PermissionGuard],
+      },
+      {
+        path:'finances/settings/category',
+        component: CategoryManagerComponent,
+        canActivate: [PermissionGuard],
+      },
+      {
+        path:'finances/settings/category/:id',
+        component: CategoryManagerComponent,
         canActivate: [PermissionGuard],
       },
       {
