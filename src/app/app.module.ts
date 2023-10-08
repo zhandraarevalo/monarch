@@ -13,11 +13,12 @@ import { SideBarComponent } from './complements/side-bar/side-bar.component';
 import { SignInComponent } from './views/sign-in/sign-in.component';
 import { AuthComponent } from './views/auth/auth.component';
   import { FinancesComponent } from './views/auth/finances/finances.component';
-  import { FinancesSettingsComponent } from './views/auth/finances-settings/finances-settings.component';
-  import { AccountManagerComponent } from './views/auth/account-manager/account-manager.component';
-  import { WalletManagerComponent } from './views/auth/wallet-manager/wallet-manager.component';
-  import { GroupManagerComponent } from './views/auth/group-manager/group-manager.component';
-  import { CategoryManagerComponent } from './views/auth/category-manager/category-manager.component';
+    import { FinancesSettingsComponent } from './views/auth/finances-settings/finances-settings.component';
+      import { AccountManagerComponent } from './views/auth/account-manager/account-manager.component';
+      import { WalletManagerComponent } from './views/auth/wallet-manager/wallet-manager.component';
+      import { GroupManagerComponent } from './views/auth/group-manager/group-manager.component';
+      import { CategoryManagerComponent } from './views/auth/category-manager/category-manager.component';
+    import { BudgetManagerComponent } from './views/auth/budget-manager/budget-manager.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AuthComponent } from './views/auth/auth.component';
       WalletManagerComponent,
       GroupManagerComponent,
       CategoryManagerComponent,
+      BudgetManagerComponent,
   ],
   imports: [
     AppRoutingModule,

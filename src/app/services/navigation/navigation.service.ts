@@ -52,7 +52,7 @@ export class NavigationService {
       return false;
     });
 
-    if (found && index) {
+    if (found && index !== null) {
       this.router.navigate([locations[index].url]);
     }
   }

@@ -43,6 +43,9 @@ export class AuthComponent implements OnInit {
     if (!this.catalogue.paymentTypeList) {
       this.getPaymentTypeCatalogue();
     }
+    if (!this.catalogue.mainCurrency) {
+      this.getMainCurrency();
+    }
   }
 
   getWalletTypeCatalogue() {
@@ -93,6 +96,20 @@ export class AuthComponent implements OnInit {
       const { token, data } = response;
       const { list: paymentTypeList } = this.security.decryptResponse(token as string, data as string);
       this.session.saveCatalogue({ paymentTypeList });
+    }, error: ({ error }) => {
+     this.notification.httpCode = error.httpCode;
+      this.notification.internalCode = error.internalCode;
+      this.notification.message = error.userMessage;
+      this.utils.turnOnModal('notification');
+    }});
+  }
+
+  getMainCurrency() {
+    this.server.get('/api/finances/currency/main')
+    .subscribe({ next: (response) => {
+      const { token, data } = response;
+      const { mainCurrency } = this.security.decryptResponse(token as string, data as string);
+      this.session.saveCatalogue({ mainCurrency });
     }, error: ({ error }) => {
      this.notification.httpCode = error.httpCode;
       this.notification.internalCode = error.internalCode;

@@ -19,6 +19,10 @@ form {
         width: 300px;
       }
 
+      .btn {
+        height: 40px;
+      }
+
       input.ng-invalid.ng-touched {
         box-shadow: 0 0 3px $error;
         border-color: $error;
@@ -58,9 +62,11 @@ form {
     &.table-form {
       width: 100%;
       
-      input,
-      select,
-      .btn {
+      input {
+        width: 150px;
+      }
+
+      select {
         width: 300px;
       }
     }
@@ -117,8 +123,7 @@ form {
       input[type=month],
       input[type=email],
       input[type=password],
-      select,
-      .btn {
+      select {
         height: 40px;
       }
 

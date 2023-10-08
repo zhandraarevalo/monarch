@@ -1,0 +1,81 @@
+<div class="header flx jcb aic">
+  <h3 class="flx aic">
+    <span class="material-symbols-outlined">request_quote</span>
+    <span>{{content.modules.finances.budget}}</span>
+  </h3>
+  
+  <div class="flx aic">
+    <button class="btn btn-box btn-bthr flx jcc aic" (click)="addBudget()">
+      <span class="material-symbols-outlined">add</span>
+    </button>
+  </div>
+</div>
+
+<app-navigation></app-navigation>
+
+<form [formGroup]="categoryForm" (submit)="execute()">
+  <fieldset class="table-form">
+    <div class="table-container flx">
+      <table [cellSpacing]="0">
+        <thead>
+          <th>{{content.tag.group}}</th>
+          <th>{{content.tag.category}}</th>
+          <th>{{content.tag.type}}</th>
+          <th>{{content.tag.accumulates}}</th>
+          <th>{{content.tag.currentAmount}}</th>
+          <th>{{content.tag.amount}}</th>
+          <th class="tac col-10"></th>
+        </thead>
+        <tbody *ngIf="budgetArray.controls.length > 0">
+            <ng-container formArrayName="budget">
+              <tr *ngFor="let item of budgetArray.controls; index as i">
+                <ng-container formGroupName="{{i}}">
+                  <td class="tac">
+                    <select formControlName="group">
+                      <option [value]="null">{{content.select.group}}</option>
+                      <option [value]="item.id" *ngFor="let item of groupList">{{item.name}}</option>
+                    </select>
+                  </td>
+                  <td class="tac">
+                    <input type="text" formControlName="name">
+                  </td>
+                  <td>
+                    <select formControlName="type">
+                      <option [value]="null">{{content.select.categoryType}}</option>
+                      <option [value]="item.tag" *ngFor="let item of typeList">{{content.catalogue.categoryType[item.tag]}}</option>
+                    </select>
+                  </td>
+                  <td><input type="checkbox" formControlName="accumulates"></td>
+                  <td class="tar">{{categoryList[i]?.budget?.amount / 100 | number: '1.2-2'}} {{mainCurrency.currency.iso}}</td>
+                  <td class="tar">
+                    <input type="number" min="0" class="tar" formControlName="amount" (change)="changeAmount()">
+                  </td>
+                  <td class="tac">
+                    <button class="btn btn-box btn-bthr flx jcc aic" (click)="addBudget()">
+                      <span class="material-symbols-outlined">delete</span>
+                    </button>
+                  </td>
+                </ng-container>
+              </tr>
+            </ng-container>
+        </tbody>
+        <tbody *ngIf="budgetArray.controls.length === 0">
+          <tr>
+            <td class="tac" colspan="7">{{content.tag.noRows}}</td>
+          </tr>
+        </tbody>
+        <tfoot *ngIf="categoryList.length > 0">
+          <tr>
+            <td class="tar" colspan="4">TOTAL</td>
+            <td class="tar">{{currentTotalAmount / 100 | number: '1.2-2'}} {{mainCurrency.currency.iso}}</td>
+            <td class="tar">{{totalAmount / 100 | number: '1.2-2'}} {{mainCurrency.currency.iso}}</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="flx jcc">
+      <input type="submit" class="btn btn-lrg btn-bthr" [value]="content.button.accept" [disabled]="!categoryForm.valid">
+    </div>
+  </fieldset>
+</form>
