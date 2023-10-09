@@ -13,7 +13,9 @@ import { AuthComponent } from './views/auth/auth.component';
       import { WalletManagerComponent } from './views/auth/wallet-manager/wallet-manager.component';
       import { GroupManagerComponent } from './views/auth/group-manager/group-manager.component';
       import { CategoryManagerComponent } from './views/auth/category-manager/category-manager.component';
-  import { BudgetManagerComponent } from './views/auth/budget-manager/budget-manager.component';
+    import { BudgetManagerComponent } from './views/auth/budget-manager/budget-manager.component';
+    import { TransactionPaymentComponent } from './views/auth/transaction-payment/transaction-payment.component';
+    import { TransactionTransferComponent } from './views/auth/transaction-transfer/transaction-transfer.component';
 
 const routes: Routes = [
   {
@@ -79,6 +81,16 @@ const routes: Routes = [
         {
           path:'finances/budget',
           component: BudgetManagerComponent,
+          canActivate: [PermissionGuard],
+        },
+        {
+          path:'finances/transaction/payment',
+          component: TransactionPaymentComponent,
+          canActivate: [PermissionGuard],
+        },
+        {
+          path:'finances/transaction/transfer',
+          component: TransactionTransferComponent,
           canActivate: [PermissionGuard],
         },
       {

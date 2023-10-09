@@ -8,13 +8,16 @@
     <button class="btn btn-box btn-bthr flx jcc aic" title="{{content.modules.finances.budget}}" routerLink="budget">
       <span class="material-symbols-outlined">request_quote</span>
     </button>
-    <button class="btn btn-box btn-bone flx jcc aic" title="{{content.modules.finances.settings}}" routerLink="settings">
-      <span class="material-symbols-outlined">settings</span>
+    <button class="btn btn-box btn-bthr flx jcc aic" title="">
+      <span class="material-symbols-outlined">alarm_on</span>
     </button>
     <button class="btn btn-box btn-bthr flx jcc aic" title="">
       <span class="material-symbols-outlined">backup</span>
     </button>
-    <button class="btn btn-box btn-bone flx jcc aic" title="">
+    <button class="btn btn-box btn-bthr flx jcc aic" title="{{content.modules.finances.settings}}" routerLink="settings">
+      <span class="material-symbols-outlined">settings</span>
+    </button>
+    <button class="btn btn-box btn-bthr flx jcc aic" title="">
       <span class="material-symbols-outlined">filter_alt</span>
     </button>
   </div>
@@ -23,9 +26,9 @@
 <app-navigation></app-navigation>
 
 <div class="flx jcc wrp">
-  <button class="btn btn-lrg btn-bone">Cambio</button>
-  <button class="btn btn-lrg btn-bthr">Pago</button>
-  <button class="btn btn-lrg btn-bone">Transferencia</button>
+  <button class="btn btn-lrg btn-bthr" disabled>Cambio</button>
+  <button class="btn btn-lrg btn-bthr" routerLink="transaction/payment">Pago</button>
+  <button class="btn btn-lrg btn-bthr" routerLink="transaction/transfer">Transferencia</button>
 </div>
 
 <div class="flx jca wrp">

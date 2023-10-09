@@ -27,7 +27,7 @@
         <td class="tac"><span class="material-symbols-outlined">{{item.active ? 'check' : 'close'}}</span></td>
         <td class="tac"><span class="material-symbols-outlined">{{item.main ? 'check' : 'close'}}</span></td>
         <td class="flx jcc aic">
-          <button class="btn btn-box btn-bone flx jcc aic" routerLink="currency/{{item.id}}">
+          <button class="btn btn-box btn-bthr flx jcc aic" routerLink="currency/{{item.id}}">
             <span class="material-symbols-outlined">edit_square</span>
           </button>
         </td>
@@ -43,7 +43,7 @@
 
 <div class="flx jcb aic">
   <h4>{{content.modules.finances.accountSettings}}</h4>
-  <button class="btn btn-box btn-bone flx jcc aic" routerLink="account">
+  <button class="btn btn-box btn-bthr flx jcc aic" routerLink="account">
     <span class="material-symbols-outlined">add</span>
   </button>
 </div>
@@ -60,7 +60,7 @@
         <td>{{item.name}}</td>
         <td>{{item.currency.iso}}</td>
         <td class="flx jcc aic">
-          <button class="btn btn-box btn-bone flx jcc aic" routerLink="account/{{item.id}}">
+          <button class="btn btn-box btn-bthr flx jcc aic" routerLink="account/{{item.id}}">
             <span class="material-symbols-outlined">edit_square</span>
           </button>
         </td>
@@ -76,7 +76,7 @@
 
 <div class="flx jcb aic">
   <h4>{{content.modules.finances.walletSettings}}</h4>
-  <button class="btn btn-box btn-bone flx jcc aic" routerLink="wallet">
+  <button class="btn btn-box btn-bthr flx jcc aic" routerLink="wallet">
     <span class="material-symbols-outlined">add</span>
   </button>
 </div>
@@ -95,7 +95,7 @@
         <td>{{item.name}}</td>
         <td>{{content.catalogue.walletType[item.type]}}</td>
         <td class="flx jcc aic">
-          <button class="btn btn-box btn-bone flx jcc aic" routerLink="wallet/{{item.id}}">
+          <button class="btn btn-box btn-bthr flx jcc aic" routerLink="wallet/{{item.id}}">
             <span class="material-symbols-outlined">edit_square</span>
           </button>
         </td>
@@ -111,7 +111,7 @@
 
 <div class="flx jcb aic">
   <h4>{{content.modules.finances.groupSettings}}</h4>
-  <button class="btn btn-box btn-bone flx jcc aic" routerLink="group">
+  <button class="btn btn-box btn-bthr flx jcc aic" routerLink="group">
     <span class="material-symbols-outlined">add</span>
   </button>
 </div>
@@ -126,7 +126,7 @@
       <tr *ngFor="let item of groupList">
         <td>{{item.name}}</td>
         <td class="flx jcc aic">
-          <button class="btn btn-box btn-bone flx jcc aic" routerLink="group/{{item.id}}">
+          <button class="btn btn-box btn-bthr flx jcc aic" routerLink="group/{{item.id}}">
             <span class="material-symbols-outlined">edit_square</span>
           </button>
         </td>
@@ -142,7 +142,7 @@
 
 <div class="flx jcb aic">
   <h4>{{content.modules.finances.categorySettings}}</h4>
-  <button class="btn btn-box btn-bone flx jcc aic" routerLink="category">
+  <button class="btn btn-box btn-bthr flx jcc aic" routerLink="category">
     <span class="material-symbols-outlined">add</span>
   </button>
 </div>
@@ -165,7 +165,7 @@
         <td class="tac"><span class="material-symbols-outlined">{{item.accumulates ? 'check' : 'close'}}</span></td>
         <td class="tar">{{item.budget.amount / 100 | number: '1.2-2'}}</td>
         <td class="flx jcc aic">
-          <button class="btn btn-box btn-bone flx jcc aic" routerLink="category/{{item.id}}">
+          <button class="btn btn-box btn-bthr flx jcc aic" routerLink="category/{{item.id}}">
             <span class="material-symbols-outlined">edit_square</span>
           </button>
         </td>

@@ -1,0 +1,83 @@
+<div class="header flx jcb aic">
+  <h3 class="flx aic">
+    <span class="material-symbols-outlined">payments</span>
+    <span>{{content.modules.finances.transactionTransfer}}</span>
+  </h3>
+</div>
+
+<app-navigation></app-navigation>
+
+<div class="flx col aic">
+  <form [formGroup]="transactionForm" (submit)="execute()">
+    <fieldset class="form-v">
+      <label for="transaction_payment-date">{{content.tag.date}} <span class="required">*</span></label>
+      <input type="date" id="transaction_payment-date" formControlName="date">
+
+      <label for="transaction_payment-group">{{content.tag.group}} <span class="required">*</span></label>
+      <select id="transaction_payment-group" formControlName="group" (change)="selectGroup()">
+        <option [value]="null">{{content.select.group}}</option>
+        <option [value]="item.id" *ngFor="let item of groupList">{{item.name}}</option>
+      </select>
+
+      <div *ngIf="groupCategoryList.length > 0">
+        <label for="transaction_payment-category">{{content.tag.category}} <span class="required">*</span></label>
+        <select id="transaction_payment-category" formControlName="category">
+          <option [value]="null">{{content.select.category}}</option>
+          <option [value]="item.id" *ngFor="let item of groupCategoryList">{{item.name}}</option>
+        </select>
+      </div>
+
+      <label for="transaction_payment-exit_account">{{content.tag.exitAccount}} <span class="required">*</span></label>
+      <select id="transaction_payment-exit_account" formControlName="exitAccount" (change)="selectAccount('exit')">
+        <option [value]="null">{{content.select.account}}</option>
+        <option [value]="item.id" *ngFor="let item of accountList">{{item.name}}</option>
+      </select>
+
+      <div *ngIf="exitWalletList.length > 0">
+        <label for="transaction_payment-exit_wallet">{{content.tag.exitWallet}} <span class="required">*</span></label>
+        <select id="transaction_payment-exit_wallet" formControlName="exitWallet">
+          <option [value]="null">{{content.select.wallet}}</option>
+          <option [value]="item.id" *ngFor="let item of exitWalletList">{{item.name}}</option>
+        </select>
+      </div>
+
+      <label for="transaction_payment-entry_account">{{content.tag.entryAccount}} <span class="required">*</span></label>
+      <select id="transaction_payment-entry_account" formControlName="entryAccount" (change)="selectAccount('entry')">
+        <option [value]="null">{{content.select.account}}</option>
+        <option [value]="item.id" *ngFor="let item of accountList">{{item.name}}</option>
+      </select>
+
+      <div *ngIf="entryWalletList.length > 0">
+        <label for="transaction_payment-entry_wallet">{{content.tag.entryWallet}} <span class="required">*</span></label>
+        <select id="transaction_payment-entry_wallet" formControlName="entryWallet">
+          <option [value]="null">{{content.select.wallet}}</option>
+          <option [value]="item.id" *ngFor="let item of entryWalletList">{{item.name}}</option>
+        </select>
+      </div>
+
+      <label for="transaction_payment-amount">{{content.tag.amount}} <span class="required">*</span></label>
+      <input type="number" min="0" id="transaction_payment-amount" placeholder="{{content.tag.amount}}" formControlName="amount">
+
+      <!-- <input type="button" class="btn btn-lrg btn-btwo" value="Add Payment" (click)="addPayment()"> -->
+      
+      <!-- <ng-container formArrayName="payments">
+        <div *ngFor="let payment of paymentsArray.controls; index as i">
+          <ng-container formGroupName="{{i}}">
+
+            <label for="transaction_payment-{{i}}-type">{{content.tag.type}} <span class="required">*</span></label>
+            <select id="transaction_payment-{{i}}-type" formControlName="type">
+              <option [value]="null">{{content.select.paymentType}}</option>
+              <option [value]="item.tag" *ngFor="let item of catalogue.paymentTypeList">{{content.catalogue.paymentType[item.tag]}}</option>
+            </select>
+
+            <input type="button" class="btn btn-lrg btn-bone" value="Remove Payment" (click)="removePayment(i)">
+
+          </ng-container>
+        </div>
+      </ng-container> -->
+
+      <p class="form-message"><span class="required">*</span> {{content.tag.requiredFields}}</p>
+      <input type="submit" class="btn btn-inp btn-bthr" [value]="content.button.accept" [disabled]="!transactionForm.valid">
+    </fieldset>
+  </form>
+</div>

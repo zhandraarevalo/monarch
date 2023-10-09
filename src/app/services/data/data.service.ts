@@ -71,6 +71,9 @@ export class DataService {
           categoryCreate: 'Crear categoría',
           categoryUpdate: 'Editar categoría',
           budget: 'Presupuesto',
+          transactionPayment: 'Pagar',
+          transactionTransfer: 'Transferir',
+          transactionExchange: 'Cambiar',
         },
         locker: {
           title: 'Contraseñas',
@@ -87,9 +90,13 @@ export class DataService {
       },
       select: {
         account: 'Seleccione una cuenta',
+        category: 'Seleccione una categoría',
         currency: 'Seleccione una moneda',
         group: 'Seleccione un grupo',
+        wallet: 'Seleccione una billetera',
         categoryType: 'Seleccione el tipo de categoría',
+        paymentType: 'Seleccione el tipo de pago',
+        transactionType: 'Seleccione el tipo de transacción',
         walletType: 'Seleccione el tipo de billetera',
       },
       tag: {
@@ -102,6 +109,11 @@ export class DataService {
         country: 'País',
         currency: 'Moneda',
         currentAmount: 'Monto actual',
+        date: 'Fecha',
+        entryAccount: 'Cuenta de ingreso',
+        entryWallet: 'Billetera de ingreso',
+        exitAccount: 'Cuenta de egreso',
+        exitWallet: 'Billetera de egreso',
         group: 'Grupo',
         initialBalance: 'Saldo inicial',
         iso: 'Código ISO',
@@ -110,6 +122,7 @@ export class DataService {
         noRows: 'No hay registros para mostrar',
         requiredFields: 'Campos requeridos',
         type: 'Tipo',
+        wallet: 'Billetera',
       }
     }
   }

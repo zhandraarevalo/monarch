@@ -19,6 +19,8 @@ import { AuthComponent } from './views/auth/auth.component';
       import { GroupManagerComponent } from './views/auth/group-manager/group-manager.component';
       import { CategoryManagerComponent } from './views/auth/category-manager/category-manager.component';
     import { BudgetManagerComponent } from './views/auth/budget-manager/budget-manager.component';
+    import { TransactionPaymentComponent } from './views/auth/transaction-payment/transaction-payment.component';
+    import { TransactionTransferComponent } from './views/auth/transaction-transfer/transaction-transfer.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { AuthComponent } from './views/auth/auth.component';
     SignInComponent,
     AuthComponent,
       FinancesComponent,
-      FinancesSettingsComponent,
-      AccountManagerComponent,
-      WalletManagerComponent,
-      GroupManagerComponent,
-      CategoryManagerComponent,
-      BudgetManagerComponent,
+        FinancesSettingsComponent,
+          AccountManagerComponent,
+          WalletManagerComponent,
+          GroupManagerComponent,
+          CategoryManagerComponent,
+        BudgetManagerComponent,
+        TransactionPaymentComponent,
+        TransactionTransferComponent,
   ],
   imports: [
     AppRoutingModule,
