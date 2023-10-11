@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ConstantService {
 
-  urlServer: string = 'https://server.zhandraarevalo.com';
+  urlServer: string = 'https://servant.zhandraarevalo.com';
   sessionKey: string = 'ASVSDF$4fasce34rvdfc34fvxvD';
 
   constructor() { }
