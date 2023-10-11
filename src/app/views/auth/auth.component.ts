@@ -31,6 +31,9 @@ export class AuthComponent implements OnInit {
   }
 
   catalogueData() {
+    if (!this.catalogue.mainCurrency) {
+      this.getMainCurrency();
+    }
     if (!this.catalogue.walletTypeList) {
       this.getWalletTypeCatalogue();
     }
@@ -42,9 +45,6 @@ export class AuthComponent implements OnInit {
     }
     if (!this.catalogue.paymentTypeList) {
       this.getPaymentTypeCatalogue();
-    }
-    if (!this.catalogue.mainCurrency) {
-      this.getMainCurrency();
     }
   }
 

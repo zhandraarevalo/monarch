@@ -99,7 +99,6 @@ export class WalletManagerComponent implements OnInit {
     .subscribe({ next: (response) => {
       const { token, data } = response;
       const { accountList } = this.security.decryptResponse(token as string, data as string);
-      console.log(accountList);
       this.accountList = accountList;
     }, error: ({ error }) => {
       this.notification.httpCode = error.httpCode;
@@ -116,7 +115,6 @@ export class WalletManagerComponent implements OnInit {
       name: this.walletForm.value.name,
       balance: Math.trunc(this.walletForm.value.balance * 100),
     }
-    console.log(requestData);
 
     if (this.walletId) {
       this.update(requestData);
@@ -139,7 +137,6 @@ export class WalletManagerComponent implements OnInit {
 
   update(requestData: any) {
     requestData.balance = this.wallet.balance;
-    console.log(requestData);
     this.server.put('/api/finances/wallet/'+this.walletId, requestData)
     .subscribe({ next: () => {
       this.navigation.returnOne(`/${this.completeRoute}`);

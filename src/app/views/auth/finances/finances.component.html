@@ -25,85 +25,90 @@
 
 <app-navigation></app-navigation>
 
+<div class="flx jca wrp">
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{content.modules.finances.incomeBudget}}</span>
+    <span class="monitor-value mono tar">
+      {{ boxBudget?.income / 100 | number: '1.2-2' }} {{mainCurrency?.currency?.iso || ''}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{content.modules.finances.savingBudget}}</span>
+    <span class="monitor-value mono tar">
+      {{ boxBudget?.saving / 100 | number: '1.2-2' }} {{mainCurrency?.currency?.iso || ''}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{content.modules.finances.expenseBudget}}</span>
+    <span class="monitor-value mono tar">
+      {{ boxBudget?.expense / 100 | number: '1.2-2' }} {{mainCurrency?.currency?.iso || ''}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{content.modules.finances.reserveBudget}}</span>
+    <span class="monitor-value mono tar">
+      {{ boxBudget?.reserve / 100 | number: '1.2-2' }} {{mainCurrency?.currency?.iso || ''}}
+    </span>
+  </div>
+</div>
+
+<div class="flx jca wrp">
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{content.modules.finances.incomeTotal}}</span>
+    <span class="monitor-value mono tar">
+      {{ boxTotal?.income / 100 | number: '1.2-2' }} {{mainCurrency?.currency?.iso || ''}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{content.modules.finances.savingTotal}}</span>
+    <span class="monitor-value mono tar">
+      {{ boxTotal?.saving / 100 | number: '1.2-2' }} {{mainCurrency?.currency?.iso || ''}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{content.modules.finances.expenseTotal}}</span>
+    <span class="monitor-value mono tar">
+      {{ boxTotal?.expense / 100 | number: '1.2-2' }} {{mainCurrency?.currency?.iso || ''}}
+    </span>
+  </div>
+  <div class="monitor-box flx col">
+    <span class="monitor-title">{{content.modules.finances.reserveTotal}}</span>
+    <span class="monitor-value mono tar">
+      {{ boxTotal?.reserve / 100 | number: '1.2-2' }} {{mainCurrency?.currency?.iso || ''}}
+    </span>
+  </div>
+</div>
+
 <div class="flx jcc wrp">
   <button class="btn btn-lrg btn-bthr" disabled>Cambio</button>
   <button class="btn btn-lrg btn-bthr" routerLink="transaction/payment">Pago</button>
   <button class="btn btn-lrg btn-bthr" routerLink="transaction/transfer">Transferencia</button>
 </div>
 
-<div class="flx jca wrp">
-  <div class="monitor-box flx col">
-    <span class="monitor-title">TITLE</span>
-    <span class="monitor-value mono tar">
-      {{ 0 | number: '1.2-2' }} MXN
-    </span>
-  </div>
-  <div class="monitor-box flx col">
-    <span class="monitor-title">TITLE</span>
-    <span class="monitor-value mono tar">
-      {{ 0 | number: '1.2-2' }} MXN
-    </span>
-  </div>
-  <div class="monitor-box flx col">
-    <span class="monitor-title">TITLE</span>
-    <span class="monitor-value mono tar">
-      {{ 0 | number: '1.2-2' }} MXN
-    </span>
-  </div>
-  <div class="monitor-box flx col">
-    <span class="monitor-title">TITLE</span>
-    <span class="monitor-value mono tar">
-      {{ 0 | number: '1.2-2' }} MXN
-    </span>
-  </div>
-  <!-- <div class="monitor-box flx col">
-    <span class="monitor-title">{{data.modules.dashboard.currentIncome}}</span>
-    <span class="monitor-value mono tar">
-      {{ (budgets?.incomeBudget ? budgets.incomeBudget / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
-    </span>
-  </div>
-  <div class="monitor-box flx col">
-    <span class="monitor-title">{{data.modules.dashboard.savingsBudget}}</span>
-    <span class="monitor-value mono tar">
-      {{ (budgets?.savingBudget ? budgets.savingBudget / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
-    </span>
-  </div>
-  <div class="monitor-box flx col">
-    <span class="monitor-title">{{data.modules.dashboard.expensesBudget}}</span>
-    <span class="monitor-value mono tar">
-      {{ (budgets?.expenseBudget ? budgets.expenseBudget / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
-    </span>
-  </div>
-  <div class="monitor-box flx col">
-    <span class="monitor-title">{{data.modules.dashboard.reserveBudget}}</span>
-    <span class="monitor-value mono tar">
-      {{ (budgets?.reserveBudget ? budgets.reserveBudget / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
-    </span>
-  </div>
-  <div class="monitor-box flx col">
-    <span class="monitor-title">{{data.modules.dashboard.totalIncome}}</span>
-    <span class="monitor-value mono tar">
-      {{ (budgets?.incomeTotal ? budgets.incomeTotal / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
-    </span>
-  </div>
-  <div class="monitor-box flx col">
-    <span class="monitor-title">{{data.modules.dashboard.totalSavings}}</span>
-    <span class="monitor-value mono tar">
-      {{ (budgets?.savingTotal ? budgets.savingTotal / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
-    </span>
-  </div>
-  <div class="monitor-box flx col">
-    <span class="monitor-title">{{data.modules.dashboard.totalExpenses}}</span>
-    <span class="monitor-value mono tar">
-      {{ (budgets?.expenseTotal ? budgets.expenseTotal / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
-    </span>
-  </div>
-  <div class="monitor-box flx col">
-    <span class="monitor-title">{{data.modules.dashboard.totalReserved}}</span>
-    <span class="monitor-value mono tar">
-      {{ (budgets?.reserveTotal ? budgets.reserveTotal / 100 : 0) | number: '1.2-2' }} {{mainCurrency.iso}}
-    </span>
-  </div> -->
+<div class="flx jcb aic">
+  <h4>{{content.modules.finances.bankStatement}}</h4>
 </div>
 
-<!-- <app-notification [notification]="notification"></app-notification> -->
+<div class="table-container flx">
+  <table [cellSpacing]="0">
+    <thead>
+      <th>{{content.tag.account}}</th>
+      <th>{{content.tag.name}}</th>
+      <th>{{content.tag.type}}</th>
+      <th>{{content.tag.balance}}</th>
+    </thead>
+    <tbody *ngIf="walletList.length > 0">
+      <tr *ngFor="let item of walletList">
+        <td>{{item.account.name}}</td>
+        <td>{{item.name}}</td>
+        <td>{{content.catalogue.walletType[item.type]}}</td>
+        <td class="tar">{{item.balance / 100 | number: '1.2-2'}} {{item.account.currency.iso}}</td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="walletList.length === 0">
+      <tr>
+        <td class="tac" colspan="4">{{content.tag.noRows}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
