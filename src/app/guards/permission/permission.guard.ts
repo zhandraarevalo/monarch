@@ -17,6 +17,7 @@ export class PermissionGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
     const activeRoute = route.routeConfig?.path?.split('/')[0];
     const activeModules = this.session.getCatalogue.modules.filter((item: any) => item.active).map((item: any) => item.route);
     if (!activeModules.includes(activeRoute)) {

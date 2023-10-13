@@ -41,9 +41,7 @@ export class SessionService {
   }
 
   finish() {
-    localStorage.removeItem('catalogue');
-    localStorage.removeItem('nav');
-    localStorage.removeItem('session');
+    localStorage.clear();
   }
 
   saveCatalogue(data: any) {

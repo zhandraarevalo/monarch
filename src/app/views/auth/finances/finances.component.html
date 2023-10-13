@@ -8,16 +8,16 @@
     <button class="btn btn-box btn-bthr flx jcc aic" title="{{content.modules.finances.budget}}" routerLink="budget">
       <span class="material-symbols-outlined">request_quote</span>
     </button>
-    <button class="btn btn-box btn-bthr flx jcc aic" title="">
+    <button class="btn btn-box btn-bthr flx jcc aic" title="" disabled>
       <span class="material-symbols-outlined">alarm_on</span>
     </button>
-    <button class="btn btn-box btn-bthr flx jcc aic" title="">
+    <button class="btn btn-box btn-bthr flx jcc aic" title="" disabled>
       <span class="material-symbols-outlined">backup</span>
     </button>
     <button class="btn btn-box btn-bthr flx jcc aic" title="{{content.modules.finances.settings}}" routerLink="settings">
       <span class="material-symbols-outlined">settings</span>
     </button>
-    <button class="btn btn-box btn-bthr flx jcc aic" title="">
+    <button class="btn btn-box btn-bthr flx jcc aic" title="" disabled>
       <span class="material-symbols-outlined">filter_alt</span>
     </button>
   </div>
@@ -96,6 +96,7 @@
       <th>{{content.tag.name}}</th>
       <th>{{content.tag.type}}</th>
       <th>{{content.tag.balance}}</th>
+      <th class="col-10"></th>
     </thead>
     <tbody *ngIf="walletList.length > 0">
       <tr *ngFor="let item of walletList">
@@ -103,11 +104,16 @@
         <td>{{item.name}}</td>
         <td>{{content.catalogue.walletType[item.type]}}</td>
         <td class="tar">{{item.balance / 100 | number: '1.2-2'}} {{item.account.currency.iso}}</td>
+        <td class="flx jcc aic">
+          <button class="btn btn-box btn-bthr flx jcc aic" disabled>
+            <span class="material-symbols-outlined">info</span>
+          </button>
+        </td>
       </tr>
     </tbody>
     <tbody *ngIf="walletList.length === 0">
       <tr>
-        <td class="tac" colspan="4">{{content.tag.noRows}}</td>
+        <td class="tac" colspan="5">{{content.tag.noRows}}</td>
       </tr>
     </tbody>
   </table>
