@@ -105,7 +105,7 @@
         <td>{{content.catalogue.walletType[item.type]}}</td>
         <td class="tar">{{item.balance / 100 | number: '1.2-2'}} {{item.account.currency.iso}}</td>
         <td class="flx jcc aic">
-          <button class="btn btn-box btn-bthr flx jcc aic" disabled>
+          <button class="btn btn-box btn-bthr flx jcc aic" routerLink="wallet/{{item.id}}/payment-detail">
             <span class="material-symbols-outlined">info</span>
           </button>
         </td>
