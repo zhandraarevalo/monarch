@@ -16,6 +16,7 @@ import { AuthComponent } from './views/auth/auth.component';
     import { BudgetManagerComponent } from './views/auth/budget-manager/budget-manager.component';
     import { TransactionPaymentComponent } from './views/auth/transaction-payment/transaction-payment.component';
     import { TransactionTransferComponent } from './views/auth/transaction-transfer/transaction-transfer.component';
+    import { PaymentDetailComponent } from './views/auth/payment-detail/payment-detail.component';
 
 const routes: Routes = [
   {
@@ -91,6 +92,11 @@ const routes: Routes = [
         {
           path:'finances/transaction/transfer',
           component: TransactionTransferComponent,
+          canActivate: [PermissionGuard],
+        },
+        {
+          path:'finances/wallet/:id/payment-detail',
+          component: PaymentDetailComponent,
           canActivate: [PermissionGuard],
         },
       {

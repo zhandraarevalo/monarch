@@ -1,0 +1,42 @@
+<div class="header flx jcb aic">
+  <h3 class="flx aic">
+    <span class="material-symbols-outlined">shopping_bag</span>
+    <span>{{content.modules.finances.paymentDetail}} | {{wallet?.account?.name}} - {{wallet?.name}}</span>
+  </h3>
+</div>
+
+<app-navigation></app-navigation>
+
+<div class="table-container flx">
+  <table [cellSpacing]="0">
+    <thead>
+      <th>{{content.tag.date}}</th>
+      <th>{{content.tag.group}}</th>
+      <th>{{content.tag.account}}</th>
+      <th>{{content.tag.amount}}</th>
+    </thead>
+    <tbody *ngIf="paymentList.length > 0">
+      <tr>
+        <td colspan="3" class="tar">{{content.modules.finances.previousBalance}}</td>
+        <td class="tar">{{previousBalance / 100 | number: '1.2-2'}} {{wallet?.currency}}</td>
+      </tr>
+      <tr *ngFor="let item of paymentList">
+        <td>{{item.date | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.group}}</td>
+        <td>{{item.category}}</td>
+        <td class="tar">{{item.amount / 100 | number: '1.2-2'}} {{wallet?.currency}}</td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="paymentList.length === 0">
+      <tr>
+        <td class="tac" colspan="4">{{content.tag.noRows}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="tar">{{content.modules.finances.currentBalance}}</td>
+        <td class="tar">{{wallet?.balance / 100 | number: '1.2-2'}} {{wallet?.currency}}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

@@ -22,6 +22,7 @@ import { AuthComponent } from './views/auth/auth.component';
     import { BudgetManagerComponent } from './views/auth/budget-manager/budget-manager.component';
     import { TransactionPaymentComponent } from './views/auth/transaction-payment/transaction-payment.component';
     import { TransactionTransferComponent } from './views/auth/transaction-transfer/transaction-transfer.component';
+    import { PaymentDetailComponent } from './views/auth/payment-detail/payment-detail.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AuthComponent } from './views/auth/auth.component';
         BudgetManagerComponent,
         TransactionPaymentComponent,
         TransactionTransferComponent,
+        PaymentDetailComponent,
   ],
   imports: [
     AppRoutingModule,
