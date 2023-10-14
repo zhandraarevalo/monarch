@@ -65,6 +65,7 @@ export class DataService {
           budget: 'Presupuesto',
           categorySettings: 'Configuración de categorías',
           categoryCreate: 'Crear categoría',
+          categoryExpenses: 'Gastos por categoría',
           categoryUpdate: 'Editar categoría',
           currentBalance: 'Saldo actual',
           expenseBudget: 'Presupuesto de gastos',
@@ -114,6 +115,7 @@ export class DataService {
       tag: {
         account: 'Cuenta',
         accumulates: 'Acumula',
+        accumulated: 'Acumulado',
         active: 'Activo',
         amount: 'Monto',
         balance: 'Saldo',
@@ -134,6 +136,7 @@ export class DataService {
         name: 'Nombre',
         noRows: 'No hay registros para mostrar',
         requiredFields: 'Campos requeridos',
+        spent: 'Gastado',
         type: 'Tipo',
         wallet: 'Billetera',
       }

@@ -25,6 +25,7 @@ export class FinancesComponent implements OnInit {
   boxTotal: any;
 
   walletList: any[] = [];
+  categoryList: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -57,6 +58,7 @@ export class FinancesComponent implements OnInit {
     const month = date.getMonth();
     const data = { year, month };
     this.getBankStatement(data);
+    this.getCategoryExpenses(data);
     this.getBoxBudget(data);
     this.getBoxTotal(data);
   }
@@ -67,6 +69,20 @@ export class FinancesComponent implements OnInit {
       const { token, data } = response;
       const { walletList } = this.security.decryptResponse(token as string, data as string);
       this.walletList = walletList;
+    }, error: ({ error }) => {
+      this.notification.httpCode = error.httpCode;
+      this.notification.internalCode = error.internalCode;
+      this.notification.message = error.userMessage;
+      this.utils.turnOnModal('notification');
+    }});
+  }
+
+  getCategoryExpenses(data: any) {
+    this.server.post('/api/finances/dashboard/category-expenses', data)
+    .subscribe({ next: (response) => {
+      const { token, data } = response;
+      const { categoryList } = this.security.decryptResponse(token as string, data as string);
+      this.categoryList = categoryList;
     }, error: ({ error }) => {
       this.notification.httpCode = error.httpCode;
       this.notification.internalCode = error.internalCode;

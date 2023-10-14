@@ -85,6 +85,7 @@
   <button class="btn btn-lrg btn-bthr" routerLink="transaction/transfer">Transferencia</button>
 </div>
 
+
 <div class="flx jcb aic">
   <h4>{{content.modules.finances.bankStatement}}</h4>
 </div>
@@ -114,6 +115,45 @@
     <tbody *ngIf="walletList.length === 0">
       <tr>
         <td class="tac" colspan="5">{{content.tag.noRows}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="flx jcb aic">
+  <h4>{{content.modules.finances.categoryExpenses}}</h4>
+</div>
+
+<div class="table-container flx">
+  <table [cellSpacing]="0">
+    <thead>
+      <th>{{content.tag.group}}</th>
+      <th>{{content.tag.category}}</th>
+      <th>{{content.tag.type}}</th>
+      <th>{{content.tag.budget}}</th>
+      <th>{{content.tag.accumulated}}</th>
+      <th>{{content.tag.spent}}</th>
+      <th class="col-10"></th>
+    </thead>
+    <tbody *ngIf="categoryList.length > 0">
+      <tr *ngFor="let item of categoryList">
+        <td>{{item.group}}</td>
+        <td>{{item.category}}</td>
+        <td>{{content.catalogue.categoryType[item.type]}}</td>
+        <td class="tar">{{item.budget / 100 | number: '1.2-2'}} {{mainCurrency.currency.iso}}</td>
+        <td class="tar">{{item.accumulated / 100 | number: '1.2-2'}} {{mainCurrency.currency.iso}}</td>
+        <td class="tar">{{item.spent / 100 | number: '1.2-2'}} {{mainCurrency.currency.iso}}</td>
+        <td class="flx jcc aic">
+          <button class="btn btn-box btn-bthr flx jcc aic" routerLink="category/{{item.id}}/transaction-detail" disabled>
+            <span class="material-symbols-outlined">info</span>
+          </button>
+        </td>
+      </tr>
+    </tbody> 
+    <tbody *ngIf="categoryList.length === 0">
+      <tr>
+        <td class="tac" colspan="7">{{content.tag.noRows}}</td>
       </tr>
     </tbody>
   </table>
