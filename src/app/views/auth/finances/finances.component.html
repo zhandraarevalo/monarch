@@ -131,9 +131,10 @@
       <th>{{content.tag.group}}</th>
       <th>{{content.tag.category}}</th>
       <th>{{content.tag.type}}</th>
-      <th>{{content.tag.budget}}</th>
       <th>{{content.tag.accumulated}}</th>
+      <th>{{content.tag.budget}}</th>
       <th>{{content.tag.spent}}</th>
+      <th>{{content.tag.difference}}</th>
       <th class="col-10"></th>
     </thead>
     <tbody *ngIf="categoryList.length > 0">
@@ -141,11 +142,12 @@
         <td>{{item.group}}</td>
         <td>{{item.category}}</td>
         <td>{{content.catalogue.categoryType[item.type]}}</td>
-        <td class="tar">{{item.budget / 100 | number: '1.2-2'}} {{mainCurrency.currency.iso}}</td>
-        <td class="tar">{{item.accumulated / 100 | number: '1.2-2'}} {{mainCurrency.currency.iso}}</td>
-        <td class="tar">{{item.spent / 100 | number: '1.2-2'}} {{mainCurrency.currency.iso}}</td>
+        <td class="tar">{{item.accumulates ? (item.accumulated / 100 | number: '1.2-2') + ' ' + mainCurrency?.currency?.iso : 'N/A'}}</td>
+        <td class="tar">{{item.budget / 100 | number: '1.2-2'}} {{mainCurrency?.currency?.iso}}</td>
+        <td class="tar">{{item.spent / 100 | number: '1.2-2'}} {{mainCurrency?.currency?.iso}}</td>
+        <td class="tar">{{(item.budget - getAbs(item.spent)) / 100 | number: '1.2-2'}} {{mainCurrency?.currency?.iso}}</td>
         <td class="flx jcc aic">
-          <button class="btn btn-box btn-bthr flx jcc aic" routerLink="category/{{item.id}}/transaction-detail" disabled>
+          <button class="btn btn-box btn-bthr flx jcc aic" routerLink="category/{{item.id}}/transaction-detail">
             <span class="material-symbols-outlined">info</span>
           </button>
         </td>

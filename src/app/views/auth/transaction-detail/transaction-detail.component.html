@@ -1,0 +1,34 @@
+<div class="header flx jcb aic">
+  <h3 class="flx aic">
+    <span class="material-symbols-outlined">shopping_bag</span>
+    <span>{{content.modules.finances.transactionDetail}} | {{category?.group}} - {{category?.name}}</span>
+  </h3>
+</div>
+
+<app-navigation></app-navigation>
+
+<div class="table-container flx">
+  <table [cellSpacing]="0">
+    <thead>
+      <th>{{content.tag.date}}</th>
+      <th>{{content.tag.type}}</th>
+      <th>{{content.tag.amount}}</th>
+    </thead>
+    <tbody *ngIf="transactionList.length > 0">
+      <tr>
+        <td colspan="2" class="tar">{{content.tag.budget}}</td>
+        <td class="tar">{{category.budget / 100 | number: '1.2-2'}} {{mainCurrency?.currency?.iso}}</td>
+      </tr>
+      <tr *ngFor="let item of transactionList">
+        <td>{{item.date | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.type}}</td>
+        <td class="tar">{{item.totalAmount / 100 | number: '1.2-2'}} {{mainCurrency?.currency?.iso}}</td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="transactionList.length === 0">
+      <tr>
+        <td class="tac" colspan="3">{{content.tag.noRows}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
