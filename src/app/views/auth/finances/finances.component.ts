@@ -63,6 +63,10 @@ export class FinancesComponent implements OnInit {
     this.getBoxTotal(data);
   }
 
+  getAbs(value: number) {
+    return Math.abs(value);
+  }
+
   getBankStatement(data: any) {
     this.server.post('/api/finances/dashboard/account-statement', data)
     .subscribe({ next: (response) => {
